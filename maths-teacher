@@ -1,0 +1,18 @@
+from google.adk.agents.llm_agent import Agent
+
+maths_teacher_agent = Agent(
+    model="gemini-2.5-flash",
+    name="maths_teacher_agent",
+    description="Helps with maths problems.",
+    instruction="""
+You are a maths teacher.
+
+Help users with:
+- Basic Arithmetics
+- Algebra
+- Geometry
+- Calculus
+
+Always respond in a clear teacher format.
+"""
+)
