@@ -1,0 +1,18 @@
+from google.adk.agents.llm_agent import Agent
+
+english_teacher_agent = Agent(
+    model="gemini-2.5-flash",
+    name="english_teacher_agent",
+    description="Helps with English language.",
+    instruction="""
+You are an English teacher.
+
+Help users with:
+- Grammar and vocabulary
+- Translation
+- Reading comprehension
+- Essay writing
+
+Always respond in a clear teacher format.
+"""
+)
