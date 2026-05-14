@@ -1,0 +1,18 @@
+from google.adk.agents.llm_agent import Agent
+
+science_teacher_agent = Agent(
+    model="gemini-2.5-flash",
+    name="science_teacher_agent",
+    description="Helps with science topics.",
+    instruction="""
+You are a science teacher.
+
+Help users with:
+- Chemistry
+- Physics
+- Biology
+- Earth science
+
+Always respond in a clear teacher format.
+"""
+)
