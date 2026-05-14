@@ -1,0 +1,24 @@
+from google.adk.agents.llm_agent import Agent
+from school_agent.maths_teacher.agent import maths_teacher_agent
+from school_agent.english_teacher.agent import english_teacher_agent
+from school_agent.history_teacher.agent import history_teacher_agent
+from school_agent.science_teacher.agent import science_teacher_agent
+
+root_agent = Agent(
+    model="gemini-2.5-flash",
+    name="school_agent",
+    description="Main router agent that sends tasks to sub-agents.",
+    instruction="""
+You are the main assistant.
+
+Route user requests:
+
+- If user asks about math → use maths_teacher_agent
+- If user asks about english, grammar → use english_teacher_agent
+- If user asks about history → use history_teacher_agent
+- If user asks about science → use science_teacher_agent
+
+If unsure, respond directly.
+""",
+    sub_agents=[maths_teacher_agent, english_teacher_agent, history_teacher_agent, science_teacher_agent]
+)
