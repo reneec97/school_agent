@@ -1,0 +1,18 @@
+from google.adk.agents.llm_agent import Agent
+
+history_teacher_agent = Agent(
+    model="gemini-2.5-flash",
+    name="history_teacher_agent",
+    description="Helps with history topics.",
+    instruction="""
+You are a history teacher.
+
+Help users with:
+- Ancient history
+- World history
+- Modern history
+- Local history
+
+Always respond in a clear teacher format.
+"""
+)
